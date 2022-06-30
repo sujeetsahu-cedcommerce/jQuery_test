@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <table id="table">
+        <tr class="row">
+            <th>SNo.</th>
+            <th>id</th>
+            <th>name</th>
+            <th>city</th>
+        </tr>
+        <tr class="row">
+            <td>1</td>
+            <td>s1</td>
+            <td>sujeet</td>
+            <td>lucknow</td>
+        </tr>
+        <tr class="row">
+            <td>1</td>
+            <td>s1</td>
+            <td>sujeet</td>
+            <td>lucknow</td>
+        </tr>
+        <tr class="row" id="row3">
+            <td>1</td>
+            <td>s1</td>
+            <td>sujeet</td>
+            <td>lucknow</td>
+        </tr>
+        <tr class="row">
+            <td><button id="yellow_table">yellow table</button></td>
+            <td><button id="blue_row">blue row</button></td>
+            <td><button id="print_content">print content</button></td>
+            <td><button id="hide_table">hide table</button></td>
+        </tr>
+    </table>
+    <div id="display">
+    </div>
+
+<script src="test.js"></script>
+
+<script>
+    $(document).ready(function(){
+    $(document).on("click","#yellow_table",function(){
+        $("#table").css({"background-color": "yellow"});
+       // alert("hello");
+    });
+
+    $(document).on("click","#blue_row",function(){
+        $("#row3").css({"background-color": "blue"});
+       // alert("hello");
+    });
+    $(document).on("click","#hide_table",function(){
+        $("#table").hide();
+       // alert("hello");
+    });
+
+    $(document).on("click","#print_content",function(){
+      // alert("hello");
+       
+        $("#display").html($(this).parents("#table").html());
+    });
+  });
+</script>
+
+</body>
+</html>
